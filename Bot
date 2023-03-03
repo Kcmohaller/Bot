@@ -91,3 +91,17 @@ This is the ultimate showdown of ultimate destiny");
 });
 
 client.login("SuperSecretBotTokenHere");
+const prefix = "!";
+client.on("messageCreate", (message) => {
+  // Exit and stop if it's not there
+  if (!message.content.startsWith(prefix)) return;
+
+  // The back ticks are Template Literals introduced in Javascript in ES6 or ES2015, as an replacement for String Concatenation Read them up here https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+  if (message.content.startsWith(`${prefix}ping`)) {
+    message.channel.send("pong!");
+  } else
+
+  if (message.content.startsWith(`${prefix}foo`)) {
+    message.channel.send("bar!");
+  }
+});
